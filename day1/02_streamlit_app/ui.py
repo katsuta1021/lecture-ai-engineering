@@ -168,6 +168,13 @@ def display_history_list(history_df):
             cols[1].metric("類似度", f"{row['similarity_score']:.4f}" if pd.notna(row['similarity_score']) else "-")
             cols[2].metric("関連性", f"{row['relevance_score']:.4f}" if pd.notna(row['relevance_score']) else "-")
 
+            # 追加
+            # cols = st.columns(3)
+            # cols[0].metric("Perplexity", f"{row['perplexity']:.2f}" if pd.notna(row['perplexity']) else "-")
+            # cols[1].metric("BERTScore", f"{row['bert_score']:.3f}" if pd.notna(row['bert_score']) else "-")
+            # cols[2].metric("Toxicity", f"{row['toxicity_score']:.2%}" if pd.notna(row['toxicity_score']) else "-")
+
+
     st.caption(f"{total_items} 件中 {start_idx+1} - {min(end_idx, total_items)} 件を表示")
 
 
